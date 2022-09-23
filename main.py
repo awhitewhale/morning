@@ -182,8 +182,8 @@ if __name__ == '__main__':
     for user_id in user_ids:
       print('正在发送给 %s, 数据如下：%s' % (user_id, data))
       res = wm.send_template(user_id, template_id, data)
-      print('正在发送给 %s, 数据如下：%s' % (user_id2, data))
-      res = wm.send_template(user_id2, template_id, data)
+      print('正在发送给 %s, 数据如下：%s' % (user_ids2, data))
+      res = wm.send_template(user_ids2, template_id, data)
       count+=1
   except WeChatClientException as e:
     print('微信端返回错误：%s。错误代码：%d' % (e.errmsg, e.errcode))
