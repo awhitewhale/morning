@@ -18,6 +18,7 @@ app_id = os.getenv('APP_ID')
 app_secret = os.getenv('APP_SECRET')
 
 user_ids = os.getenv('USER_ID', '').split("\n")
+user_ids2 = os.getenv('USER_ID2', '').split("\n")
 template_id = os.getenv('TEMPLATE_ID')
 
 if app_id is None or app_secret is None:
@@ -181,6 +182,8 @@ if __name__ == '__main__':
     for user_id in user_ids:
       print('正在发送给 %s, 数据如下：%s' % (user_id, data))
       res = wm.send_template(user_id, template_id, data)
+      print('正在发送给 %s, 数据如下：%s' % (user_id2, data))
+      res = wm.send_template(user_id2, template_id, data)
       count+=1
   except WeChatClientException as e:
     print('微信端返回错误：%s。错误代码：%d' % (e.errmsg, e.errcode))
