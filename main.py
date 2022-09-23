@@ -161,15 +161,9 @@ data = {
 
 for index, aim_date in enumerate(split_birthday()):
   key_name = "birthday_left"
-  key_name2 = "birthday_left_1"
   if index != 0:
     key_name = key_name + "_%d" % index
-    key_name2 = key_name2 + "_%d" % index
   data[key_name] = {
-    "value": get_counter_left(aim_date),
-    "color": get_random_color()
-  }
-  data[key_name2] = {
     "value": get_counter_left(aim_date),
     "color": get_random_color()
   }
